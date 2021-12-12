@@ -1,6 +1,7 @@
 package com.jpdev.notion.core.domain;
 
 import javax.persistence.Entity;
+import java.util.Date;
 
 @Entity
 public class User extends BaseEntity {
@@ -12,6 +13,10 @@ public class User extends BaseEntity {
     private String phone;
 
     private String mobilePhone;
+
+    private String password;
+
+    private Date lastLogin;
 
     public String getName() {
         return name;
