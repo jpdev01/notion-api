@@ -8,6 +8,8 @@ public class User extends BaseEntity {
 
     private String name;
 
+    private String login;
+
     private String email;
 
     private String phone;
@@ -48,5 +50,29 @@ public class User extends BaseEntity {
 
     public void setMobilePhone(String mobilePhone) {
         this.mobilePhone = mobilePhone;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getLastLogin() {
+        return lastLogin;
+    }
+
+    public void setLastLogin(Date lastLogin) {
+        this.lastLogin = lastLogin;
     }
 }
