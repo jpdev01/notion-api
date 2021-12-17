@@ -1,6 +1,6 @@
-package com.jpdev.notion.core.domain.locale;
+package com.jpdev.domain.locale;
 
-import com.jpdev.notion.core.domain.BaseEntity;
+import com.jpdev.domain.BaseEntity;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.jpdev.notion.core.domain;
+package com.jpdev.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;

@@ -1,4 +1,4 @@
-package com.jpdev.notion.core.domain.calendar;
+package com.jpdev.domain.calendar;
 
 public enum RepeatAt {
     SUNDAY,

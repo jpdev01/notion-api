@@ -1,7 +1,7 @@
-package com.jpdev.notion.core;
+package com.jpdev;
 
-import com.jpdev.notion.core.domain.User;
-import com.jpdev.notion.core.repository.UserRepository;
+import com.jpdev.domain.User;
+import com.jpdev.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;

@@ -1,6 +1,6 @@
-package com.jpdev.notion.core.repository;
+package com.jpdev.repository;
 
-import com.jpdev.notion.core.domain.calendar.Event;
+import com.jpdev.domain.calendar.Event;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

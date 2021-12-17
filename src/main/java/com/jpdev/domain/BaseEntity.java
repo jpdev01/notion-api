@@ -1,4 +1,4 @@
-package com.jpdev.notion.core.domain;
+package com.jpdev.domain;
 
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;

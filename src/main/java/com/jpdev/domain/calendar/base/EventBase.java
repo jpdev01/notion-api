@@ -1,7 +1,7 @@
-package com.jpdev.notion.core.domain.calendar.base;
+package com.jpdev.domain.calendar.base;
 
-import com.jpdev.notion.core.domain.BaseEntity;
-import com.jpdev.notion.core.domain.User;
+import com.jpdev.domain.BaseEntity;
+import com.jpdev.domain.User;
 
 import javax.persistence.*;
 import java.util.Date;

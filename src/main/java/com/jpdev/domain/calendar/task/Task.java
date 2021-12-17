@@ -1,6 +1,6 @@
-package com.jpdev.notion.core.domain.calendar.task;
+package com.jpdev.domain.calendar.task;
 
-import com.jpdev.notion.core.domain.calendar.base.EventBase;
+import com.jpdev.domain.calendar.base.EventBase;
 
 import javax.persistence.*;
 import java.util.List;

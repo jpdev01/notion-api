@@ -1,7 +1,7 @@
-package com.jpdev.notion.core.domain.calendar;
+package com.jpdev.domain.calendar;
 
-import com.jpdev.notion.core.domain.calendar.base.EventBase;
-import com.jpdev.notion.core.domain.locale.Address;
+import com.jpdev.domain.calendar.base.EventBase;
+import com.jpdev.domain.locale.Address;
 
 import javax.persistence.Entity;
 import javax.persistence.OneToOne;
