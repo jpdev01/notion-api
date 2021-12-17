@@ -4,6 +4,7 @@ import com.jpdev.domain.calendar.task.Task;
 import com.jpdev.dto.TaskDTO;
 import com.jpdev.service.TaskService;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/task")
 public class TaskController extends BaseController<Task> {
 
+    @Autowired
     private TaskService taskService;
 
     @Override

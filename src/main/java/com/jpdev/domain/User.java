@@ -25,6 +25,9 @@ public class User extends BaseEntity {
 
     private Date lastLogin;
 
+    @Column(nullable = false)
+    private Boolean active = true;
+
     public String getName() {
         return name;
     }
@@ -79,5 +82,13 @@ public class User extends BaseEntity {
 
     public void setLastLogin(Date lastLogin) {
         this.lastLogin = lastLogin;
+    }
+
+    public Boolean getActive() {
+        return active;
+    }
+
+    public void setActive(Boolean active) {
+        this.active = active;
     }
 }
