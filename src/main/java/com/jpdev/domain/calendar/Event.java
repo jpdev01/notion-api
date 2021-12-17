@@ -11,4 +11,12 @@ public class Event extends EventBase {
 
     @OneToOne
     private Address adreess;
+
+    public Address getAdreess() {
+        return adreess;
+    }
+
+    public void setAdreess(Address adreess) {
+        this.adreess = adreess;
+    }
 }

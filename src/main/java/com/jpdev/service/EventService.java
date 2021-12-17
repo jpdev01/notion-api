@@ -34,6 +34,10 @@ public class EventService implements BaseService<Event> {
         return eventRepository.save(event);
     }
 
+    public Event save(EventDTO dto) {
+        return null;
+    }
+
     private Event parseEvent(EventDTO eventDTO){
         Event event = new Event();
         return event;

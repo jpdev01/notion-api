@@ -1,6 +1,7 @@
 package com.jpdev.service;
 
 import com.jpdev.domain.calendar.task.Task;
+import com.jpdev.dto.TaskDTO;
 import com.jpdev.repository.TaskRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -29,5 +30,9 @@ public class TaskService implements BaseService<Task> {
     @Override
     public Task save(Task entity) {
         return taskRepository.save(entity);
+    }
+
+    public Task save(TaskDTO dto) {
+        return null;
     }
 }

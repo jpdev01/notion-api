@@ -1,9 +1,10 @@
 package com.jpdev.controller;
 
 import com.jpdev.domain.calendar.Event;
+import com.jpdev.dto.EventDTO;
 import com.jpdev.service.EventService;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -19,11 +20,6 @@ public class EventController extends BaseController<Event> {
     }
 
     @Override
-    public ResponseEntity<Event> save(Object object) {
-        return null;
-    }
-
-    @Override
     public void put(Integer id, Object object) {
 
     }
@@ -33,4 +29,7 @@ public class EventController extends BaseController<Event> {
 
     }
 
+    public ResponseEntity<Event> save(@RequestBody EventDTO dto) {
+        return buildResponse(eventService.save(dto));
+    }
 }

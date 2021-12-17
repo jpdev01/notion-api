@@ -15,11 +15,6 @@ public class UserController extends BaseController<User> {
     }
 
     @Override
-    public ResponseEntity<User> save(Object object) {
-        return null;
-    }
-
-    @Override
     public void put(Integer id, Object object) {
 
     }
