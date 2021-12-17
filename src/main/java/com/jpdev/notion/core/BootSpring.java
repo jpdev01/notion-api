@@ -9,8 +9,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
 public class BootSpring implements CommandLineRunner {
+
     @Autowired
-    private UserRepository repository;
+    private UserRepository userRepository;
 
     public static void main(String[] args)
     {
@@ -21,7 +22,7 @@ public class BootSpring implements CommandLineRunner {
     public void run(String... args) throws Exception {
         User user = new User();
         user.setName("Administrador");
-        repository.save(user);
+        userRepository.save(user);
     }
 }
 

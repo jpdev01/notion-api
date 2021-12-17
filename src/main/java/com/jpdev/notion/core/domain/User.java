@@ -1,21 +1,26 @@
 package com.jpdev.notion.core.domain;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import java.util.Date;
 
 @Entity
 public class User extends BaseEntity {
 
+    @Column(nullable = false)
     private String name;
 
+    @Column(nullable = false)
     private String login;
 
+    @Column(nullable = false)
     private String email;
 
     private String phone;
 
     private String mobilePhone;
 
+    @Column(nullable = false)
     private String password;
 
     private Date lastLogin;
