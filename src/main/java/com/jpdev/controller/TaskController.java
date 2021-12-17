@@ -1,15 +1,18 @@
 package com.jpdev.controller;
 
-public class TaskController implements BaseController {
+import com.jpdev.domain.calendar.task.Task;
+import org.springframework.http.ResponseEntity;
+
+public class TaskController extends BaseController<Task> {
 
     @Override
-    public void get(Integer id) {
-
+    public ResponseEntity<Task> get(Integer id) {
+        return null;
     }
 
     @Override
-    public void save(Object object) {
-
+    public ResponseEntity<Task> save(Object object) {
+        return null;
     }
 
     @Override

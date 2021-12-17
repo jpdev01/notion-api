@@ -1,12 +1,24 @@
 package com.jpdev.controller;
 
-public interface BaseController {
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 
-    public void get(Integer id);
+public abstract class BaseController<T> implements BaseControllerInterface<T> {
 
-    public void save(Object object);
+    public ResponseEntity<T> buildResponse() {
+        return buildResponse(HttpStatus.OK);
+    }
 
-    public void put(Integer id, Object object);
+    public ResponseEntity<T> buildResponse(T entity) {
+        if (entity == null) return new ResponseEntity<T>(HttpStatus.NOT_FOUND);
+        return new ResponseEntity<T>(entity, HttpStatus.OK);
+    }
 
-    public void delete(Integer id);
+    public ResponseEntity<T> buildResponse(HttpStatus status) {
+        return new ResponseEntity<T>(status);
+    }
+
+    public ResponseEntity<T> buildResponse(T entity, HttpStatus status) {
+        return new ResponseEntity<T>(entity, status);
+    }
 }

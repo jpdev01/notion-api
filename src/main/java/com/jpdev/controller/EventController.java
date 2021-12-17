@@ -1,20 +1,26 @@
 package com.jpdev.controller;
 
+import com.jpdev.domain.calendar.Event;
+import com.jpdev.service.EventService;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @RequestMapping("/event")
-public class EventController implements BaseController {
+public class EventController extends BaseController<Event> {
+
+    private EventService eventService;
 
     @Override
-    public void get(Integer id) {
-
+    public ResponseEntity<Event> get(Integer id) {
+        return buildResponse(eventService.get(id));
     }
 
     @Override
-    public void save(Object object) {
-
+    public ResponseEntity<Event> save(Object object) {
+        return null;
     }
 
     @Override
@@ -26,4 +32,5 @@ public class EventController implements BaseController {
     public void delete(Integer id) {
 
     }
+
 }

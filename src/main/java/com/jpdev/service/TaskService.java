@@ -5,7 +5,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
-import java.util.Optional;
+
 
 public class TaskService implements BaseService<Task> {
 
@@ -20,8 +20,8 @@ public class TaskService implements BaseService<Task> {
     }
 
     @Override
-    public Optional<Task> get(Integer id) {
-        return Optional.empty();
+    public Task get(Integer id) {
+        return null;
     }
 
     @Override
