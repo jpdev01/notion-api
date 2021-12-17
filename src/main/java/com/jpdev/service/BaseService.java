@@ -13,5 +13,5 @@ public interface BaseService<T> {
 
     public T get(Integer id);
 
-    public void save(T entity);
+    public T save(T entity);
 }

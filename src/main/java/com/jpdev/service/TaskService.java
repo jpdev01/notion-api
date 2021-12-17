@@ -1,31 +1,33 @@
 package com.jpdev.service;
 
 import com.jpdev.domain.calendar.task.Task;
+import com.jpdev.repository.TaskRepository;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
 import java.util.List;
 
-
 public class TaskService implements BaseService<Task> {
+
+    private TaskRepository taskRepository;
 
     @Override
     public List<Task> getAll() {
-        return null;
+        return taskRepository.findAll();
     }
 
     @Override
     public Page<Task> getAll(Pageable pageable) {
-        return null;
+        return taskRepository.findAll(pageable);
     }
 
     @Override
     public Task get(Integer id) {
-        return null;
+        return taskRepository.getById(id);
     }
 
     @Override
-    public void save(Task entity) {
-
+    public Task save(Task entity) {
+        return taskRepository.save(entity);
     }
 }
