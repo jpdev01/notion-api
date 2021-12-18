@@ -12,6 +12,4 @@ public interface BaseService<T> {
     public Page<T> getAll(Pageable pageable);
 
     public T get(Integer id);
-
-    public T save(T entity);
 }

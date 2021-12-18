@@ -2,12 +2,16 @@ package com.jpdev.domain;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import java.util.Date;
 
 @Entity
 public class User extends BaseEntity {
 
     @Column(nullable = false)
+    @NotNull
+    @NotBlank
     private String name;
 
     @Column(nullable = false)

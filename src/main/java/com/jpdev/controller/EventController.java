@@ -17,18 +17,15 @@ public class EventController extends BaseController<Event> {
     @Autowired
     private EventService eventService;
 
-    @Override
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
     public ResponseEntity<Event> get(Integer id) {
         return buildResponse(eventService.get(id));
     }
 
-    @Override
     public void put(Integer id, Object object) {
 
     }
 
-    @Override
     public void delete(Integer id) {
 
     }

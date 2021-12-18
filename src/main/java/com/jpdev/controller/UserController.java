@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.validation.Valid;
+
 @RestController
 @RequestMapping("/user")
 public class UserController extends BaseController<User> {
@@ -30,7 +32,8 @@ public class UserController extends BaseController<User> {
 
     }
 
-    public void save(@RequestBody UserDTO userDTO) {
-        System.out.println(userDTO.name);
+    @RequestMapping(value = "/save", method = RequestMethod.POST)
+    public ResponseEntity<User> save(@Valid @RequestBody UserDTO userDTO) {
+        return buildResponse( userService.save(userDTO));
     }
 }

@@ -3,7 +3,7 @@ package com.jpdev.controller;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
-public abstract class BaseController<T>{
+public abstract class BaseController<T> {
 
     public ResponseEntity<T> buildResponse() {
         return buildResponse(HttpStatus.OK);

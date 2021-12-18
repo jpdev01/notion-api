@@ -31,7 +31,6 @@ public class EventService implements BaseService<Event> {
         return eventRepository.getById(id);
     }
 
-    @Override
     public Event save(Event event) {
         return eventRepository.save(event);
     }
