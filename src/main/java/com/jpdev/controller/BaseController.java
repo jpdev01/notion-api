@@ -1,31 +1,28 @@
 package com.jpdev.controller;
 
-import com.jpdev.validation.error.InvalidDomain;
+import com.jpdev.domain.BaseEntity;
+import com.jpdev.utils.DomainUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.ExceptionHandler;
 
-public abstract class BaseController<T> {
+public abstract class BaseController<T extends BaseEntity> {
 
-    public ResponseEntity<T> buildResponse() {
+    public ResponseEntity buildResponse() {
         return buildResponse(HttpStatus.OK);
     }
 
-    public ResponseEntity<T> buildResponse(T entity) {
+    public ResponseEntity buildResponse(T entity) {
         if (entity == null) return new ResponseEntity<T>(HttpStatus.NOT_FOUND);
+        if (entity.hasErrors()) return new ResponseEntity(new ErrorResponseBody(DomainUtils.getFirstErrorMessage(entity)), HttpStatus.BAD_REQUEST);
         return new ResponseEntity<T>(entity, HttpStatus.OK);
     }
 
-    public ResponseEntity<T> buildResponse(HttpStatus status) {
+    public ResponseEntity buildResponse(HttpStatus status) {
         return new ResponseEntity<T>(status);
     }
 
-    public ResponseEntity<T> buildResponse(T entity, HttpStatus status) {
+    public ResponseEntity buildResponse(T entity, HttpStatus status) {
+        if (entity.hasErrors())  return new ResponseEntity<>("oi", HttpStatus.BAD_REQUEST);
         return new ResponseEntity<T>(entity, status);
-    }
-
-    @ExceptionHandler(InvalidDomain.class)
-    public void conflict() {
-        System.out.println("oi");
     }
 }

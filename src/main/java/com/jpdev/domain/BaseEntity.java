@@ -62,4 +62,8 @@ public abstract class BaseEntity {
         if (this.errors == null) this.errors = new ArrayList<>();
         this.errors.add(customError);
     }
+
+    public boolean hasErrors(){
+        return this.errors != null || !this.errors.isEmpty();
+    }
 }

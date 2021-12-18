@@ -32,6 +32,10 @@ public class BusinessValidation {
         return this.errors.get(0).getMessage();
     }
 
+    public CustomError getFirstError(){
+        return this.errors.get(0);
+    }
+
     public String getAllErrorMessage() {
         // testar.
         String messages = this.errors.stream().map(CustomError::getMessage).collect(Collectors.joining());

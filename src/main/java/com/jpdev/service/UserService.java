@@ -43,10 +43,10 @@ public class UserService extends BaseService {
     }
 
     public User save(UserDTO userDTO) {
-        BusinessValidation businessValidation = validate(userDTO, CustomGroupValidator.ON_CREATE);
-        //if (businessValidation.hasErrors()) return businessValidation;
-
         User user = new User();
+        validate(user, userDTO, CustomGroupValidator.ON_CREATE);
+
+        if (user.hasErrors()) return user;
 
         return user;
     }

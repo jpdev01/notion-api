@@ -1,6 +1,8 @@
 package com.jpdev.service;
 
+import com.jpdev.domain.BaseEntity;
 import com.jpdev.domain.User;
+import com.jpdev.utils.DomainUtils;
 import com.jpdev.validation.BusinessValidation;
 import com.jpdev.validation.group.CustomGroupValidator;
 import com.jpdev.validation.group.OnCreate;
@@ -43,7 +45,24 @@ public abstract class BaseService implements BaseServiceInterface<User> {
         if (!violations.isEmpty()) {
             businessValidation.addError(buildCustomErrorCode(violations.iterator().next()));
         }
-        return new BusinessValidation();
+        return businessValidation;
+    }
+
+    protected BaseEntity validate(BaseEntity entity, Object object) {
+        BusinessValidation businessValidation = validate(object);
+
+        if (businessValidation.hasErrors()) DomainUtils.addError(entity, businessValidation.getFirstError());
+
+        return entity;
+    }
+
+    protected BaseEntity validate(BaseEntity entity, Object object, CustomGroupValidator customGroupValidator) {
+        this.validatorGroup = customGroupValidator;
+        BusinessValidation businessValidation = validate(object);
+
+        if (businessValidation.hasErrors()) DomainUtils.addError(entity, businessValidation.getFirstError());
+
+        return entity;
     }
 
     private Class getValidatorGroup(CustomGroupValidator customGroupValidator) {
