@@ -17,7 +17,6 @@ public class TaskController extends BaseController<Task> {
     @Autowired
     private TaskService taskService;
 
-    @Override
     public ResponseEntity<Task> get(Integer id) {
         return null;
     }
@@ -26,12 +25,10 @@ public class TaskController extends BaseController<Task> {
         return null;
     }
 
-    @Override
     public void put(Integer id, Object object) {
 
     }
 
-    @Override
     public void delete(Integer id) {
 
     }

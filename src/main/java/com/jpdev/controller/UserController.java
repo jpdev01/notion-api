@@ -22,12 +22,10 @@ public class UserController extends BaseController<User> {
         return buildResponse(userService.get(id));
     }
 
-    @Override
     public void put(Integer id, Object object) {
 
     }
 
-    @Override
     public void delete(Integer id) {
 
     }
