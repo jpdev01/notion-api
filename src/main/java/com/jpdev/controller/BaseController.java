@@ -1,7 +1,9 @@
 package com.jpdev.controller;
 
+import com.jpdev.validation.error.InvalidDomain;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 
 public abstract class BaseController<T> {
 
@@ -20,5 +22,10 @@ public abstract class BaseController<T> {
 
     public ResponseEntity<T> buildResponse(T entity, HttpStatus status) {
         return new ResponseEntity<T>(entity, status);
+    }
+
+    @ExceptionHandler(InvalidDomain.class)
+    public void conflict() {
+        System.out.println("oi");
     }
 }

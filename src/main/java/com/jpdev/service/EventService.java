@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class EventService implements BaseService<Event> {
+public class EventService implements BaseServiceInterface<Event> {
 
     @Autowired
     private EventRepository eventRepository;

@@ -33,7 +33,7 @@ public class UserController extends BaseController<User> {
     }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public ResponseEntity<User> save(@Valid @RequestBody UserDTO userDTO) {
+    public ResponseEntity<User> save(@RequestBody UserDTO userDTO) {
         return buildResponse( userService.save(userDTO));
     }
 }

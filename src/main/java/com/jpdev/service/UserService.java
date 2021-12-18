@@ -5,19 +5,27 @@ import com.jpdev.dto.UserDTO;
 import com.jpdev.repository.UserRepository;
 
 import com.jpdev.validation.BusinessValidation;
+import com.jpdev.validation.group.CustomGroupValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-import javax.validation.Valid;
+import javax.validation.ConstraintViolation;
+import javax.validation.ConstraintViolationException;
+import javax.validation.Validator;
 import java.util.List;
+import java.util.Set;
 
 @Service
-public class UserService implements BaseService<User> {
+public class UserService extends BaseService {
 
     @Autowired
     private UserRepository userRepository;
+
+    UserService(Validator validator){
+        super(validator);
+    }
 
     @Override
     public List<User> getAll() {
@@ -35,24 +43,12 @@ public class UserService implements BaseService<User> {
     }
 
     public User save(UserDTO userDTO) {
-        BusinessValidation businessValidation = validate(userDTO);
+        BusinessValidation businessValidation = validate(userDTO, CustomGroupValidator.ON_CREATE);
         //if (businessValidation.hasErrors()) return businessValidation;
 
         User user = new User();
 
         return user;
     }
-
-    private BusinessValidation validate(UserDTO userDTO){
-//        Set<ConstraintViolation<Input>> violations = validator.validate(customer);
-//        if (!violations.isEmpty()) {
-//            throw new ConstraintViolationException(violations);
-//        }
-        BusinessValidation businessValidation = new BusinessValidation();
-        if (userDTO.name == null) businessValidation.addError("Atributte name is necessary");
-
-        return businessValidation;
-    }
-
 
 }

@@ -11,7 +11,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 @Service
-public class TaskService implements BaseService<Task> {
+public class TaskService implements BaseServiceInterface<Task> {
 
     @Autowired
     private TaskRepository taskRepository;
