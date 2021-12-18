@@ -16,9 +16,9 @@ public abstract class EventBase extends BaseEntity {
     @Column(nullable = false)
     private Date finalDate;
 
-    @ManyToOne
-    @Column(nullable = false)
-    private User owner;
+//    @OneToOne
+//    @Column(nullable = false)
+//    private User owner;
 
     @ManyToMany
     private List<User> participants;
@@ -44,13 +44,13 @@ public abstract class EventBase extends BaseEntity {
         this.finalDate = finalDate;
     }
 
-    public User getOwner() {
-        return owner;
-    }
-
-    public void setOwner(User owner) {
-        this.owner = owner;
-    }
+//    public User getOwner() {
+//        return owner;
+//    }
+//
+//    public void setOwner(User owner) {
+//        this.owner = owner;
+//    }
 
     public List<User> getParticipants() {
         return participants;

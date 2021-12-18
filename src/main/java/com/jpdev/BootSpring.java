@@ -22,6 +22,9 @@ public class BootSpring implements CommandLineRunner {
     public void run(String... args) throws Exception {
         User user = new User();
         user.setName("Administrador");
+        user.setLogin("adm");
+        user.setPassword("adm");
+        user.setEmail("adm@gmail.com");
         userRepository.save(user);
     }
 }

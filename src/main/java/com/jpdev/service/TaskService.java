@@ -3,6 +3,7 @@ package com.jpdev.service;
 import com.jpdev.domain.calendar.task.Task;
 import com.jpdev.dto.TaskDTO;
 import com.jpdev.repository.TaskRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
@@ -12,6 +13,7 @@ import java.util.List;
 @Service
 public class TaskService implements BaseService<Task> {
 
+    @Autowired
     private TaskRepository taskRepository;
 
     @Override

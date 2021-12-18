@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/event")
 public class EventController extends BaseController<Event> {
-    
+
     @Autowired
     private EventService eventService;
 
