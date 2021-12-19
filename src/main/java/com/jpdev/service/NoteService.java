@@ -1,5 +1,6 @@
 package com.jpdev.service;
 
+import com.jpdev.domain.notes.Folder;
 import com.jpdev.domain.notes.Note;
 import com.jpdev.repository.NoteRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,5 +34,10 @@ public class NoteService extends BaseService implements BaseServiceInterface<Not
     @Override
     public Note get(Integer id) {
         return noteRepository.getById(id);
+    }
+
+    public Folder moveFolder(Long folderId, Long noteId){
+        Folder folder = noteRepository.getById(noteId);
+
     }
 }

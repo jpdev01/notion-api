@@ -4,4 +4,5 @@ public class NoteDTO {
 
     private String content;
 
+    private Integer folder;
 }

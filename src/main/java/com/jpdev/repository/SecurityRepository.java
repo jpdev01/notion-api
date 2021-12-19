@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface SecurityRepository extends JpaRepository<User, Integer> {
+public interface SecurityRepository extends JpaRepository<User, Long> {
 
     //    @Query(value = "select id FROM user u " +
 //            "WHERE u.login = :paramLogin " +
