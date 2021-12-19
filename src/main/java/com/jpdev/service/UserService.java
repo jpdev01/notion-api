@@ -34,7 +34,7 @@ public class UserService extends BaseService implements BaseServiceInterface<Use
     }
 
     @Override
-    public User get(Integer id) {
+    public User get(Long id) {
         return userRepository.getById(id);
     }
 

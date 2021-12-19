@@ -27,7 +27,7 @@ public class TaskService implements BaseServiceInterface<Task> {
     }
 
     @Override
-    public Task get(Integer id) {
+    public Task get(Long id) {
         return taskRepository.getById(id);
     }
 

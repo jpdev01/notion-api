@@ -32,7 +32,7 @@ public class NoteService extends BaseService implements BaseServiceInterface<Not
     }
 
     @Override
-    public Note get(Integer id) {
+    public Note get(Long id) {
         return noteRepository.getById(id);
     }
 

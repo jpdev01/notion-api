@@ -27,7 +27,7 @@ public class EventService implements BaseServiceInterface<Event> {
     }
 
     @Override
-    public Event get(Integer id) {
+    public Event get(Long id) {
         return eventRepository.getById(id);
     }
 

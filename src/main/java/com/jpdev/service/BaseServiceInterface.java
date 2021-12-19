@@ -11,5 +11,5 @@ public interface BaseServiceInterface<T> {
 
     public Page<T> getAll(Pageable pageable);
 
-    public T get(Integer id);
+    public T get(Long id);
 }
