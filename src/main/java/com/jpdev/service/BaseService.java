@@ -1,7 +1,6 @@
 package com.jpdev.service;
 
 import com.jpdev.domain.BaseEntity;
-import com.jpdev.domain.User;
 import com.jpdev.utils.DomainUtils;
 import com.jpdev.validation.BusinessValidation;
 import com.jpdev.validation.group.CustomGroupValidator;
@@ -12,7 +11,7 @@ import javax.validation.ConstraintViolation;
 import javax.validation.Validator;
 import java.util.Set;
 
-public abstract class BaseService implements BaseServiceInterface<User> {
+public abstract class BaseService {
 
     private Validator validator;
 
