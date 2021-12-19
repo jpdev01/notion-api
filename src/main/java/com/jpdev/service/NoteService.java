@@ -12,12 +12,15 @@ import javax.validation.Validator;
 import java.util.List;
 
 @Service
-public class NoteService extends BaseService implements BaseServiceInterface<Note>{
+public class NoteService extends BaseService implements BaseServiceInterface<Note> {
 
     @Autowired
     private NoteRepository noteRepository;
 
-    NoteService(Validator validator){
+    @Autowired
+    private FolderService folderService;
+
+    NoteService(Validator validator) {
         super(validator);
     }
 
@@ -37,7 +40,11 @@ public class NoteService extends BaseService implements BaseServiceInterface<Not
     }
 
     public Folder moveFolder(Long folderId, Long noteId){
-        Folder folder = noteRepository.getById(noteId);
+        Note note = noteRepository.getById(noteId);
+        Folder folder = folderService.get(folderId);
 
+        //if (folder == null || note == null) throw new Exception("Pasta ou nota não encontrada");
+        note.setFolder(folder);
+        return folder;
     }
 }
