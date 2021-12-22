@@ -33,7 +33,7 @@
         <dependency>
             <groupId>com.github.jpdev01</groupId>
             <artifactId>i18n</artifactId>
-            <version>77440832de</version>
+            <version>1b3c78efc2</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
