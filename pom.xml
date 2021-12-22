@@ -18,10 +18,22 @@
     <properties>
         <java.version>11</java.version>
     </properties>
+
+    <repositories>
+        <repository>
+            <id>jitpack.io</id>
+            <url>https://jitpack.io</url>
+        </repository>
+    </repositories>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.jpdev01</groupId>
+            <artifactId>i18n</artifactId>
+            <version>77440832de</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>

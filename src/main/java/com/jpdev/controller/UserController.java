@@ -20,7 +20,7 @@ public class UserController extends BaseController<User> {
     private UserService userService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<User> get(Integer id) {
+    public ResponseEntity<User> get(Long id) {
         return buildResponse(userService.get(id));
     }
 

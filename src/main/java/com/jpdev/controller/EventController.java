@@ -18,7 +18,7 @@ public class EventController extends BaseController<Event> {
     private EventService eventService;
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
-    public ResponseEntity<Event> get(Integer id) {
+    public ResponseEntity<Event> get(Long id) {
         return buildResponse(eventService.get(id));
     }
 
