@@ -2,6 +2,7 @@ package com.jpdev.domain.calendar.base;
 
 import com.jpdev.domain.BaseEntity;
 import com.jpdev.domain.User;
+import com.jpdev.domain.calendar.Role;
 
 import javax.persistence.*;
 import java.util.Date;
@@ -16,9 +17,11 @@ public abstract class EventBase extends BaseEntity {
     @Column(nullable = false)
     private Date finalDate;
 
-//    @OneToOne
-//    @Column(nullable = false)
-//    private User owner;
+    @OneToOne
+    private User owner;
+
+    @Column(nullable = false)
+    private Role role;
 
     @ManyToMany
     private List<User> participants;
@@ -44,13 +47,13 @@ public abstract class EventBase extends BaseEntity {
         this.finalDate = finalDate;
     }
 
-//    public User getOwner() {
-//        return owner;
-//    }
-//
-//    public void setOwner(User owner) {
-//        this.owner = owner;
-//    }
+    public User getOwner() {
+        return owner;
+    }
+
+    public void setOwner(User owner) {
+        this.owner = owner;
+    }
 
     public List<User> getParticipants() {
         return participants;
@@ -59,4 +62,6 @@ public abstract class EventBase extends BaseEntity {
     public void setParticipants(List<User> participants) {
         this.participants = participants;
     }
+
+
 }

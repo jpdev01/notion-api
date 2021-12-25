@@ -5,6 +5,8 @@ import com.jpdev.utils.DomainUtils;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 
+import java.util.List;
+
 public abstract class BaseController<T extends BaseEntity> {
 
     public ResponseEntity buildResponse() {
@@ -15,6 +17,12 @@ public abstract class BaseController<T extends BaseEntity> {
         if (entity == null) return new ResponseEntity<T>(HttpStatus.NOT_FOUND);
         if (entity.hasErrors()) return new ResponseEntity(new ErrorResponseBody(DomainUtils.getFirstErrorMessage(entity)), HttpStatus.BAD_REQUEST);
         return new ResponseEntity<T>(entity, HttpStatus.OK);
+    }
+
+    public ResponseEntity buildResponse(List<T> entityList) {
+        if (entityList == null) return new ResponseEntity<T>(HttpStatus.NOT_FOUND);
+        //if (entityList.hasErrors()) return new ResponseEntity(new ErrorResponseBody(DomainUtils.getFirstErrorMessage(entity)), HttpStatus.BAD_REQUEST);
+        return new ResponseEntity<List<T>>(entityList, HttpStatus.OK);
     }
 
     public ResponseEntity buildResponse(HttpStatus status) {
