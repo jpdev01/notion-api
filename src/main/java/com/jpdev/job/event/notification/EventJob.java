@@ -1,9 +1,10 @@
 package com.jpdev.job.event.notification;
 
 import com.jpdev.domain.async.AsyncAction;
+import com.jpdev.domain.calendar.Event;
 import com.jpdev.domain.def.async.AsyncActionStatus;
-import com.jpdev.domain.def.async.AsyncActionType;
 import com.jpdev.repository.AsyncActionRepository;
+import com.jpdev.repository.EventRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
@@ -12,14 +13,14 @@ import javax.transaction.Transactional;
 import java.util.List;
 
 @Service
-public class EventNotificationJob {
+public class EventJob {
 
     @Autowired
-    private AsyncActionRepository asyncActionRepository;
+    private EventRepository eventRepository;
 
     @Scheduled(cron="0/1 * * * * ?")
     public void execute() {
-        List<AsyncAction> asyncActionList = asyncActionRepository.findAsyncActionByStatus(AsyncActionType.EVENT_NOTIFICATION, AsyncActionStatus.PENDING);
+       List<Event> events = eventRepository.findAll();
     }
+    
 }
-
