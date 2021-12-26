@@ -24,7 +24,7 @@ public abstract class EventBase extends BaseEntity {
     private Role role;
 
     @ManyToMany
-    private List<User> participants;
+    private List<InviteUserEvent> participants;
 
     String description;
 
@@ -55,13 +55,27 @@ public abstract class EventBase extends BaseEntity {
         this.owner = owner;
     }
 
-    public List<User> getParticipants() {
+    public Role getRole() {
+        return role;
+    }
+
+    public void setRole(Role role) {
+        this.role = role;
+    }
+
+    public List<InviteUserEvent> getParticipants() {
         return participants;
     }
 
-    public void setParticipants(List<User> participants) {
+    public void setParticipants(List<InviteUserEvent> participants) {
         this.participants = participants;
     }
 
+    public String getDescription() {
+        return description;
+    }
 
+    public void setDescription(String description) {
+        this.description = description;
+    }
 }
