@@ -23,10 +23,9 @@ public class EventController extends BaseController<Event> {
         return buildResponse(eventService.get(id));
     }
 
-    @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
-    public ResponseEntity<Event> getAllEvents(Long id) {
-        //if (id == null) id = PortalUtil.getCurrentUser().getId();
-        return buildResponse(eventService.getAllEvents(id));
+    @RequestMapping(value = "/user", method = RequestMethod.GET)
+    public ResponseEntity<Event> getAllEvents() {
+        return buildResponse(eventService.getAllEvents(PortalUtil.getCurrentUser().getId()));
     }
 
     public void put(Integer id, Object object) {
