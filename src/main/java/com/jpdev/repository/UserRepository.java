@@ -1,5 +1,6 @@
 package com.jpdev.repository;
 
+import com.jpdev.domain.User;
 import org.springframework.stereotype.Repository;
 
 @Repository
