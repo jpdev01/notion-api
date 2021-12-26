@@ -12,4 +12,7 @@ public interface EventBaseRepository<T extends EventBase> extends BaseRepository
 
     @Query("from #{#entityName} entity where entity.owner.id = ?1")
     List<T> findByOwnerId(Long id);
+
+    @Query("from #{#entityName} entity where entity.id = ?1 and entity.owner.id = ?2")
+    T getById(Long id, Long userId);
 }

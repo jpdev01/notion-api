@@ -4,6 +4,7 @@ import com.jpdev.domain.calendar.Event;
 import com.jpdev.dto.EventDTO;
 import com.jpdev.repository.EventRepository;
 import com.jpdev.repository.UserRepository;
+import com.jpdev.utils.PortalUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -32,7 +33,7 @@ public class EventService implements BaseServiceInterface<Event> {
 
     @Override
     public Event get(Long id) {
-        return eventRepository.getById(id);
+        return eventRepository.getById(id, PortalUtil.getCurrentUser().getId());
     }
 
     public List<Event> getAllEvents(Long userId) {

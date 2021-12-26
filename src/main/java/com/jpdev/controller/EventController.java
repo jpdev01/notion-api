@@ -3,6 +3,7 @@ package com.jpdev.controller;
 import com.jpdev.domain.calendar.Event;
 import com.jpdev.dto.EventDTO;
 import com.jpdev.service.EventService;
+import com.jpdev.utils.PortalUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -24,6 +25,7 @@ public class EventController extends BaseController<Event> {
 
     @RequestMapping(value = "/user/{userId}", method = RequestMethod.GET)
     public ResponseEntity<Event> getAllEvents(Long id) {
+        //if (id == null) id = PortalUtil.getCurrentUser().getId();
         return buildResponse(eventService.getAllEvents(id));
     }
 
